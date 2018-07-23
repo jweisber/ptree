@@ -49,3 +49,13 @@ ggplot(nodes) + theme_void() +
   geom_text(aes(x = p_x, y = p_y, label = p, angle = p_angle))
 
 ```
+
+# TODO
+
+1. Make p column optional
+2. Add option for id column
+3. Add option for leaf probabilities
+4. Add option to compute leaf probabilities
+    - Including ability to concatenate string probabilities
+5. Add option for leaf markers
+6. Add option to mathify labels
