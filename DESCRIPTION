@@ -1,0 +1,10 @@
+Package: ptree
+Title: Create Probability Trees Easily, Especially w/ ggplot2
+Version: 0.0.1
+Authors@R: person("Jonathan", "Weisberg", email = "jonathan.weisberg@utoronto.ca", role = c("aut", "cre"))
+Description: Create simple probability trees with ease. Intended for use with ggplot2, but can be used with other plotting systems too. You specify a set of nodes: the text content, and the parent node. (You can also specify the probability.) Ptree then computes the coordinates for laying out the tree's components: node-lables, connecting line segments, and (optionally) probabilities adorning those segments. A helper function can also do the work of drawing the tree for you, if you don't want to do the calls to ggplot2 yourself. 
+Depends: R (>= 3.5.1)
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
