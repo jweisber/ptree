@@ -11,10 +11,10 @@ compute_tree <- function(nodes, round = 2, ynudge = .025, aspect_ratio = 1.2) {
   if (round) {
     nodes$p <- round(nodes$p, round)
   }
-  
-  nodes <- place_labels(nodes)
+
+  nodes <- place_nodes(nodes)
   nodes <- place_segments(nodes)
-  nodes <- place_segment_labels(nodes, ynudge, aspect_ratio) 
-  
+  nodes <- place_labels(nodes, ynudge, aspect_ratio)
+
   return(nodes)
 }

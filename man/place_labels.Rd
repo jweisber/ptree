@@ -2,16 +2,19 @@
 % Please edit documentation in R/place_labels.R
 \name{place_labels}
 \alias{place_labels}
-\title{A Label Placer}
+\title{A Segment-Label Placer}
 \usage{
-place_labels(nodes)
+place_labels(nodes, y_nudge, aspect_ratio)
 }
 \description{
-Compute the x- and y-coordinate for each label
+Compute the coordinates and angle each line segment's label/probability
 }
 \examples{
-place_labels(nodes)
+place_labels(nodes, .05, 1.4)
 }
-\keyword{coordinate}
+\keyword{angle,}
+\keyword{line}
+\keyword{segment}
+\keyword{segment,}
 \keyword{x,}
 \keyword{y,}
