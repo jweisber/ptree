@@ -8,27 +8,25 @@
 #' place_descendents(nodes, 3, .5, 0)
 
 place_descendents <- function(nodes, parent_id, top, bottom) {
-  print(nodes$y)
-  
+
   child_ids <- nodes$id[nodes$parent == parent_id]
   n_children <- length(child_ids)
-  
+
   if (n_children < 1) {
     return(nodes$y)
   }
-  
+
   height <- (top - bottom) / n_children
-  
+
   i <- 1
   for (id in child_ids) {
-    nodes$y[id] <- bottom + i * height - (height / 2)
+    nodes$y[nodes$id == id] <- bottom + i * height - (height / 2)
     i_top <- bottom + i * height
     i_bottom <- bottom + i * height - height
-    print(paste("i = ", i, " id = ", id, " height = ", height, " i_top = ", i_top, " i_bottom = ", i_bottom))
     nodes$y <- place_descendents(nodes, id, i_top, i_bottom)
     i <- i + 1
   }
-  
+
   return(nodes$y)
 }
 

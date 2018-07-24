@@ -14,6 +14,6 @@ place_segments <- function(nodes) {
   nodes$yend[nodes$parent > 0] <- nodes$y[nodes$parent]
   nodes$xend[nodes$parent == 0] <- 0
   nodes$yend[nodes$parent == 0] <- 1/2
-  
+
   return(nodes)
 }

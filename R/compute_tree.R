@@ -8,12 +8,23 @@
 #' compute_tree(nodes, 2, .05, 1.4)
 
 compute_tree <- function(nodes, round = 2, ynudge = .025, aspect_ratio = 1.2) {
+
+  if ( !("id" %in% colnames(nodes)) ) {
+    nodes$id <- 1:nrow(nodes)
+  } else {
+    nodes <- nodes[order(nodes$id), ]
+  }
+
   if (round & ("p" %in% colnames(nodes))) {
     nodes$p <- round(nodes$p, round)
   }
 
+  nodes$tier <- compute_tiers(nodes)
+
   nodes <- place_nodes(nodes)
+
   nodes <- place_segments(nodes)
+
   if (("p" %in% colnames(nodes))) {
     nodes <- place_labels(nodes, ynudge, aspect_ratio)
   }

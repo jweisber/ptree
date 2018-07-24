@@ -8,8 +8,6 @@
 #' place_nodes(nodes)
 
 place_nodes <- function(nodes) {
-  nodes$id   <- 1:nrow(nodes)
-  nodes$tier <- compute_tiers(nodes)
   nodes$x    <- compute_x(nodes)
   nodes$y    <- compute_y(nodes)
   return(nodes)
