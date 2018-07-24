@@ -7,7 +7,7 @@
 #' @examples
 #' compute_tree(nodes, 2, .05, 1.4)
 
-compute_tree <- function(nodes, round = 2, ynudge = .025, aspect_ratio = 1.2) {
+compute_tree <- function(nodes, round = 2, y_nudge = .025, aspect_ratio = 1.2) {
 
   if ( !("id" %in% colnames(nodes)) ) {
     nodes$id <- 1:nrow(nodes)
@@ -26,8 +26,10 @@ compute_tree <- function(nodes, round = 2, ynudge = .025, aspect_ratio = 1.2) {
   nodes <- place_segments(nodes)
 
   if (("p" %in% colnames(nodes))) {
-    nodes <- place_labels(nodes, ynudge, aspect_ratio)
+    nodes <- place_labels(nodes, y_nudge, aspect_ratio)
   }
+
+  nodes <- flip_vertical(nodes, y_nudge)
 
   return(nodes)
 }
