@@ -4,7 +4,7 @@
 \alias{compute_tree}
 \title{A Tree Computer}
 \usage{
-compute_tree(nodes, round = 2, ynudge = 0.025, aspect_ratio = 1.2)
+compute_tree(nodes, round = 2, y_nudge = 0.025, aspect_ratio = 1.2)
 }
 \description{
 Compute all information (coordinates, angles) needed to draw a tree in a plotting package, e.g. ggplot2
