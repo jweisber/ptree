@@ -8,13 +8,15 @@
 #' compute_tree(nodes, 2, .05, 1.4)
 
 compute_tree <- function(nodes, round = 2, ynudge = .025, aspect_ratio = 1.2) {
-  if (round) {
+  if (round & ("p" %in% colnames(nodes))) {
     nodes$p <- round(nodes$p, round)
   }
 
   nodes <- place_nodes(nodes)
   nodes <- place_segments(nodes)
-  nodes <- place_labels(nodes, ynudge, aspect_ratio)
+  if (("p" %in% colnames(nodes))) {
+    nodes <- place_labels(nodes, ynudge, aspect_ratio)
+  }
 
   return(nodes)
 }

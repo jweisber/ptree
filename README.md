@@ -52,7 +52,7 @@ ggplot(nodes) + theme_void() +
 
 # TODO
 
-1. Make p column optional
+1. ~~Make p column optional~~ ✓
 2. Add option for id column
 3. Add option for leaf probabilities
 4. Add option to compute leaf probabilities
