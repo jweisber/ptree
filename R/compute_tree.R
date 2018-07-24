@@ -15,7 +15,7 @@ compute_tree <- function(nodes, round = 2, y_nudge = .025, aspect_ratio = 1.2) {
     nodes <- nodes[order(nodes$id), ]
   }
 
-  if (round & ("p" %in% colnames(nodes))) {
+  if (("p" %in% colnames(nodes)) & !is.character(nodes$p) & round) {
     nodes$p <- round(nodes$p, round)
   }
 
